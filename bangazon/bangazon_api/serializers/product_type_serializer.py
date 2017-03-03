@@ -5,5 +5,5 @@ class ProductTypeSerializer(serializers.ModelSerializer):
     url = serializers.CharField(source='get_absolute_url', read_only=True)
 
     class Meta:
-        model = ProductModelType
+        model = ProductTypeModel
         fields = ('id', 'name')
