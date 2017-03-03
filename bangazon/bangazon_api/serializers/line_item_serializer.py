@@ -7,4 +7,4 @@ class LineItemSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = LineItemModel
-        fields = ('id', 'order', 'product')
+        fields = ('id', 'url', 'order', 'product')
