@@ -1,6 +1,5 @@
 from rest_framework import serializers
-from models.order_model import OrderModel
-from models.payment_type_model import PaymentTypeModel
+from models.line_item_model import LineItem
 
 class LineItemSerializer(serializers.ModelSerializer):
     url = serializers.CharField(source='get_absolute_url', read_only=True)
