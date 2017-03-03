@@ -1,9 +1,9 @@
 from django.db import models
 
-from .product_type_model import ProductType
+from .product_type_model import ProductTypeModel
 
-class Product(models.Model):
+class ProductModel(models.Model):
     name = models.CharField(max_length=100)
     description = models.CharField(max_length=300)
     price = models.IntegerField(default=0)
-    product_type = models.ForeignKey(ProductType, on_delete=models.CASCADE,)
+    product_type = models.ForeignKey(ProductTypeModel, on_delete=models.CASCADE,)
