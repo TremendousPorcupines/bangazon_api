@@ -1,5 +1,7 @@
 from django.db import models
 
+from .product_type_model import ProductType
+
 class Product(models.Model):
     name = models.CharField(max_length=100)
     description = models.CharField(max_length=300)
