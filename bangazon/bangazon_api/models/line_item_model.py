@@ -1,8 +1,8 @@
 from django.db import models
 
-from .product_model import Product
-from .order_model import Order
+from .product_model import ProductModel
+from .order_model import OrderModel
 
-class LineItem(models.Model):
-    order = models.ForeignKey(Order, on_delete=models.CASCADE,)
-    product = models.ForeignKey(Product, on_delete=models.CASCADE,)
+class LineItemModel(models.Model):
+    order = models.ForeignKey(OrderModel, on_delete=models.CASCADE,)
+    product = models.ForeignKey(ProductModel, on_delete=models.CASCADE,)
