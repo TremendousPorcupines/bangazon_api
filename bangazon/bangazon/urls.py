@@ -23,7 +23,7 @@ router.register(r'products', product_view.ProductViewSet)
 router.register(r'product_types', product_type_view.ProductTypeViewSet)
 router.register(r'line_items', line_item_view.LineItemViewSet)
 router.register(r'orders', order_view.OrderViewSet)
-router.register(r'customers', CustomerViewSet)
+router.register(r'customers', customer_view.CustomerViewSet)
 router.register(r'payment_types', payment_view.PaymentTypeViewSet)
 
 urlpatterns = [
