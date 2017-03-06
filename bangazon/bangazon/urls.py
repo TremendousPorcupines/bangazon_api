@@ -16,17 +16,15 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from rest_framework import routers
-from bangazon_api.views import ProductViewSet, ProductTypeViewSet,
-    LinedItemViewSet, OrderViewSet,
-    CustomerViewSet, PaymentTypeViewSet
+from bangazon_api.views import customer_view, line_item_view, order_view, payment_view, product_type_view, product_view
 
 router = routers.SimpleRouter()
-router.register(r'products', ProductViewSet)
-router.register(r'product_types', ProductTypeViewSet)
-router.register(r'line_items', LinedItemViewSet)
-router.register(r'orders', OrderViewSet)
+router.register(r'products', product_view.ProductViewSet)
+router.register(r'product_types', product_type_view.ProductTypeViewSet)
+router.register(r'line_items', line_item_view.LineItemViewSet)
+router.register(r'orders', order_view.OrderViewSet)
 router.register(r'customers', CustomerViewSet)
-router.register(r'payment_types', PaymentTypeViewSet)
+router.register(r'payment_types', payment_view.PaymentTypeViewSet)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
