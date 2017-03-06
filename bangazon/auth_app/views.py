@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.contrib.auth import logout, login, authenticate
 from django.http import HttpResponse
+import json
 
 def register_user(request):
     req_body = json.loads(request.body.decode())
@@ -32,7 +33,8 @@ def login_user(request):
         success = False
 
     data = json.dumps({"success":success})
-    return HttpResponse()
+    return HttpResponse(data, content_type='application/json')
 
 def logout_user(request):
     logout(request)
+    return HttpResponse(True)
