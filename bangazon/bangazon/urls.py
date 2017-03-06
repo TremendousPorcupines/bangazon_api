@@ -13,12 +13,12 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
 from rest_framework import routers
 from bangazon_api.views import line_item_view, customer_view, order_view, payment_view, product_type_view, product_view
 
-router = routers.SimpleRouter()
+router = routers.DefaultRouter()
 router.register(r'products', product_view.ProductViewSet)
 router.register(r'product_types', product_type_view.ProductTypeViewSet)
 router.register(r'line_items', line_item_view.LineItemViewSet)
@@ -28,6 +28,7 @@ router.register(r'payment_types', payment_view.PaymentTypeViewSet)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    url(r'^', include(router.urls))
+
 ]
