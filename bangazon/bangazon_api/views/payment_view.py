@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from serializers.payment_type_serializer import PaymentTypeSerializer
-from models.payment_type_model import PaymentTypeModel
+from bangazon_api.serializers.payment_type_serializer import PaymentTypeSerializer
+from bangazon_api.models.payment_type_model import PaymentTypeModel
 
 class PaymentTypeViewSet(viewsets.ModelViewSet):
 

@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from serializers.line_item_serializer import LineItemSerializer
-from models.line_item_model import LineItemModel
+from bangazon_api.serializers.line_item_serializer import LineItemSerializer
+from bangazon_api.models.line_item_model import LineItemModel
 
 class LineItemViewSet(viewsets.ModelViewSet):
     queryset = LineItemModel.objects.all()

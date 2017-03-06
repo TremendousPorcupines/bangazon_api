@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from serializers.product_serializer import ProductSerializer
-from models.product_model import ProductModel
+from bangazon_api.serializers.product_serializer import ProductSerializer
+from bangazon_api.models.product_model import ProductModel
 
 class ProductViewSet(viewsets.ModelViewSet):
     queryset = ProductModel.objects.all()

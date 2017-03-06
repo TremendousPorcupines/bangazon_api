@@ -1,5 +1,5 @@
 from rest_framework import viewsets
-from serializers.customer_serializer import CustomerSerializer
+from bangazon_api.serializers.customer_serializer import CustomerSerializer
 from django.contrib.auth.models import User
 
 

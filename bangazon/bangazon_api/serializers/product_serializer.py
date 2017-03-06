@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from models.product_model import ProductModel
+from bangazon_api.models.product_model import ProductModel
 
 class ProductSerializer(serializers.ModelSerializer):
     url = serializers.CharField(source='get_absolute_url', read_only=True)
