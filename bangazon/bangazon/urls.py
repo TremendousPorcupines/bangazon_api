@@ -16,6 +16,9 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from rest_framework import routers
+from bangazon_api.views import ProductViewSet, ProductTypeViewSet,
+    LinedItemViewSet, OrderViewSet,
+    CustomerViewSet, PaymentTypeViewSet
 
 router = routers.SimpleRouter()
 router.register(r'products', ProductViewSet)
