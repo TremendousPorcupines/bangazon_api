@@ -16,12 +16,13 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from rest_framework import routers
+from rest_framework.authtoken import views
 from bangazon_api.views import line_item_view, customer_view, order_view, payment_view, product_type_view, product_view
 
 router = routers.DefaultRouter()
 router.register(r'products', product_view.ProductViewSet)
 router.register(r'product_types', product_type_view.ProductTypeViewSet)
-router.register(r'line_items', line_item_view.LineItemViewSet)
+router.register(r'line_items', line_item_view.LineItemViewSet, base_name='line_items')
 router.register(r'orders', order_view.OrderViewSet)
 router.register(r'customers', customer_view.CustomerViewSet)
 router.register(r'payment_types', payment_view.PaymentTypeViewSet)
@@ -30,5 +31,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    url(r'^auth_app/', include('auth_app.urls')),
+    url(r'^api-token-auth/', views.obtain_auth_token),
+    url(r'^is_auth/', customer_view.IsAuth.as_view()),
 ]
